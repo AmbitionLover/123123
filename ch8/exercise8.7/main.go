@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	base = flag.String("base", "https://www.sulinehk.com", "")
+	base = flag.String("base", "https://www.csdn.net", "")
 )
 
 func main() {

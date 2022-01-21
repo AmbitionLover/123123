@@ -72,7 +72,7 @@ func walkDir(d string, n *sync.WaitGroup, root int, info chan<- dir) {
 }
 
 // sema is a counting semaphore for limiting concurrency in dirents.
-var sema = make(chan struct{}, 20)
+var sema = make(chan struct{}, 40)
 
 // dirents returns the entries of directory dir.
 func dirents(dir string) []os.FileInfo {

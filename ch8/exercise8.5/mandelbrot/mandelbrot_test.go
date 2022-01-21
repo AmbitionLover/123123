@@ -49,7 +49,7 @@ func Benchmark128(b *testing.B) {
 /*
 goos: darwin
 goarch: amd64
-pkg: github.com/linehk/gopl/ch8/exercise8.5/mandelbrot
+pkg: github.com/AmbitionLover/gopl/ch8/exercise8.5/mandelbrot
 BenchmarkSerialRender-8   	       5	 212544422 ns/op
 Benchmark1-8              	       5	 211501226 ns/op
 BenchmarkMaxProces-8      	      30	  51970553 ns/op

@@ -7,7 +7,7 @@ type Expr interface {
 	// Check reports errors in this Expr and adds its Vars to the set.
 	Check(vars map[Var]bool) error
 
-	// 返回计算表达式所需的变量
+	// Vars 返回计算表达式所需的变量
 	Vars() []Var
 }
 

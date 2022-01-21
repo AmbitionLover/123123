@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	resp, err := http.Get("https://www.sulinehk.com")
+	resp, err := http.Get("https://www.csdn.net")
 	if err != nil {
 		log.Println(err)
 	}

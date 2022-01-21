@@ -1,4 +1,4 @@
-// The thumbnail package produces thumbnail-size images from
+// Package thumbnail The thumbnail package produces thumbnail-size images from
 // larger images. Only JPEG images are currently supported.
 package thumbnail
 

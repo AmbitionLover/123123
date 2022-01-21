@@ -24,7 +24,10 @@ func broadcaster() {
 			for cli := range clients {
 				select {
 				case cli <- msg:
-				case <-time.After(10 * time.Second):
+				case <-time.After(1 * time.Second):
+					log.Println("The client is too late to receive and discard the data~~~~~")
+					// 1. Return to channel immediately
+					// 2. End select after specified time
 				}
 			}
 
@@ -39,7 +42,7 @@ func broadcaster() {
 }
 
 func handleConn(conn net.Conn) {
-	ch := make(chan string) // outgoing client messages
+	ch := make(chan string) // outgoing client messages  Can increase client side buffering [ch := make(chan string, 3)]
 	go clientWriter(conn, ch)
 
 	who := conn.RemoteAddr().String()
@@ -60,6 +63,8 @@ func handleConn(conn net.Conn) {
 
 func clientWriter(conn net.Conn, ch <-chan string) {
 	for msg := range ch {
+		// Simulate client connection delay
+		time.Sleep(2 * time.Second)
 		fmt.Fprintln(conn, msg) // NOTE: ignoring network errors
 	}
 }

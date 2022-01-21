@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	err := CountWordsAndImages("https://www.sulinehk.com")
+	err := CountWordsAndImages("https://www.csdn.net")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "err: %v", err)
 		os.Exit(1)
